@@ -1,5 +1,6 @@
 import { useReducer } from "react"
 import Form from "./components/Form"
+import ListForm from "./components/ListForm"
 import { activityReducer,initialState } from "./reducers/activity-reducer"
 
 
@@ -26,6 +27,17 @@ function App() {
           </div>
 
         </section>
+
+        <section className="p-10 mx=auto max-w-4xl">
+          <div className="max-w-4xl mx-auto">
+            <ListForm
+              activities={state.activities}
+            />
+
+          </div>
+
+        </section>
+        
         </>
       )
 }
