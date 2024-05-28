@@ -22,6 +22,7 @@ function App() {
           <div className="max-w-4xl mx-auto">
             <Form
               dispatch={dispatch}
+              state={state}
             />
 
           </div>
@@ -32,6 +33,7 @@ function App() {
           <div className="max-w-4xl mx-auto">
             <ListForm
               activities={state.activities}
+              dispatch={dispatch}
             />
 
           </div>
