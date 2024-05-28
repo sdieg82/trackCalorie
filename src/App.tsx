@@ -1,4 +1,4 @@
-import { useReducer } from "react"
+import { useReducer,useEffect } from "react"
 import Form from "./components/Form"
 import ListForm from "./components/ListForm"
 import { activityReducer,initialState } from "./reducers/activity-reducer"
@@ -6,7 +6,10 @@ import { activityReducer,initialState } from "./reducers/activity-reducer"
 
 function App() {
   
-   const [state,dispatch]=useReducer(activityReducer,initialState)   
+   const [state,dispatch]=useReducer(activityReducer,initialState)  
+   useEffect(()=>{
+      localStorage.setItem('activities',JSON.stringify(state.activities))
+   },[state.activities])
 
       return (
         <>
@@ -29,7 +32,7 @@ function App() {
 
         </section>
 
-        <section className="p-10 mx=auto max-w-4xl">
+        <section className="p-10 mx-auto max-w-4xl">
           <div className="max-w-4xl mx-auto">
             <ListForm
               activities={state.activities}
